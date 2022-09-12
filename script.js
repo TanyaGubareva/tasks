@@ -18,8 +18,6 @@ submit.onclick = function () {
   text2.appendChild(rem);
   rem.addEventListener("click", function () {
     text2.remove();
-    // localStorage.removeItem("list");
-    let list = document.getElementById("list");
     let list1 = localStorage.setItem("list", list.innerHTML);
   });
 };
