@@ -1,23 +1,44 @@
+// Отображает сохраненные данные
 let list = document.getElementById("list");
 let data = localStorage.getItem("list");
+// Проверяет, что сохраненные данные не пустые
 if (data) {
   list.innerHTML = data;
 }
 
+// Cледим за нажатием кнопки 'Add'
 submit.onclick = function () {
+  // Получаем значение из инпута с id='text'
   let task = document.getElementById("text").value;
-  console.log(task);
+  // Создает элемент 'li'
   let text2 = document.createElement("li");
-  text2.className = "list2";
-  text2.innerHTML = task;
-  list.appendChild(text2);
-  let list1 = localStorage.setItem("list", list.innerHTML);
+  // Создаем элемент 'button'
   let rem = document.createElement("button");
-  rem.className = "rem1";
+  // В 'li' записываем значение из инпута
+  text2.innerHTML = task;
+  // Задаем текст кнопке
   rem.innerHTML = "Delete";
+  // К элементу добавляем кнопку
+  rem.className = "rem1";
   text2.appendChild(rem);
+  // В конец списка добавляет элемент 'li'
+  list.appendChild(text2);
+  // К кнопке добавляем слушателя
   rem.addEventListener("click", function () {
+    // Удаляет элемент 'li'
     text2.remove();
-    let list1 = localStorage.setItem("list", list.innerHTML);
+    // Сохраняем новый список после удаления элемента
+    localStorage.setItem("list", list.innerHTML);
   });
+
+  // Cохраняем список
+  localStorage.setItem("list", list.innerHTML);
 };
+let btns = document.querySelectorAll("ul button");
+console.log(btns);
+btns.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    btn.parentElement.remove();
+    localStorage.setItem("list", list.innerHTML);
+  });
+});
