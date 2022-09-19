@@ -3,7 +3,7 @@ const input = document.getElementById("text");
 const data = localStorage.getItem("list");
 let change = document.querySelector("#change");
 let editLi = null;
-let form = document.querySelector("#form");
+let form = document.querySelector("#submit2");
 
 // функция удаления задачи
 const removeTask = function (event) {
