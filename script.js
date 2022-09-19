@@ -1,6 +1,12 @@
 const list = document.getElementById("list");
 const input = document.getElementById("text");
 const data = localStorage.getItem("list");
+<<<<<<< HEAD
+=======
+let change = document.querySelector("#change");
+let editLi = null;
+let form = document.querySelector("#form");
+>>>>>>> edit to-do-list
 
 // функция удаления задачи
 const removeTask = function (event) {
@@ -35,11 +41,33 @@ submit.onclick = function (event) {
   text2.textContent = task;
   // Задаем текст кнопке
   rem.textContent = "Delete";
+<<<<<<< HEAD
   // К элементу добавляем кнопку
   rem.className = "rem1";
   text2.appendChild(rem);
   // В конец списка добавляет элемент 'li'
   list.appendChild(text2);
+=======
+
+  rem.className = "rem1";
+  let edit = document.createElement("button");
+  edit.textContent = "Edit";
+  edit.className = "edit1";
+  edit.addEventListener("click", function () {
+    change.value = this.parentElement.childNodes[0].textContent;
+    editLi = this.parentElement.childNodes[0].textContent;
+  });
+
+  // К элементу добавляем кнопку
+  text2.appendChild(rem);
+  text2.appendChild(edit);
+  // В конец списка добавляет элемент 'li'
+  list.appendChild(text2);
+
+  form.addEventListener("click", function () {
+    this.parentElement.childNodes[0].textContent = change.value;
+  });
+>>>>>>> edit to-do-list
   // Cохраняем список
   localStorage.setItem("list", list.innerHTML);
 
