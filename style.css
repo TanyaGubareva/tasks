@@ -1,3 +1,110 @@
 #form2 {
  display: none;
 }
+#text {
+    width: 400px;
+    height: 20px;
+    outline: none;
+    margin-top: 20px;
+}
+#submit {
+    margin-left: -6px;
+    width: 80px;
+    height: 26px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 3%;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 32px;
+    cursor: pointer;
+    padding-top: 2px;
+}
+#submit:hover {
+	animation: bounce 1s;
+}
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+}
+#list {
+    counter-reset: li; 
+list-style: none; 
+font: 14px "Trebuchet MS", "Lucida Sans";
+padding: 0;
+text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+.text2 {
+position: relative;
+display: block;
+padding: .4em .4em .4em 2em;
+margin: .5em 0;
+background: #dbbda0;
+color: white;
+text-decoration: none;
+border-radius: .3em;
+transition: .3s ease-out;
+font-family: 'Courier New', Courier, monospace;
+}
+.text2:hover {background: #bea896;}
+.text2:hover:before {transform: rotate(360deg);}
+.text2:before {
+content: counter(li);
+counter-increment: li;
+position: absolute;
+left: -1.3em;
+top: 50%;
+margin-top: -1.3em;
+background: #2196f3;
+height: 2em;
+width: 2em;
+line-height: 2em;
+border: .3em solid white;
+text-align: center;
+font-weight: bold;
+border-radius: 2em;
+transition: all .3s ease-out;
+margin-left: 10px
+}
+.rem1, .edit1 {
+    width: 50px;
+    height: 26px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 3%;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    font-size: 10px;
+    margin-left: 20px;
+}
+#change {
+    height: 20px;
+    outline: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+#submit2 {
+    width: 102px;
+    height: 26px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 3%;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: -5px;
+    padding-top: 0px;
+}

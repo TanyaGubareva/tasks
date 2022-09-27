@@ -47,6 +47,7 @@ submit.onclick = function (event) {
   let text2 = document.createElement("li");
   // В 'li' записываем значение из инпута
   text2.textContent = task;
+  text2.className = "text2";
   // Создаем элемент 'button'
   let rem = document.createElement("button");
   rem.className = "rem1";
@@ -61,7 +62,7 @@ submit.onclick = function (event) {
   edit.textContent = "Edit";
   edit.className = "edit1";
   edit.addEventListener("click", () => {
-    editLi = this.parentElement;
+    editLi = text2;
     change.value = task;
     form2.style.display = "block";
   });
@@ -82,6 +83,7 @@ submit.onclick = function (event) {
 form.addEventListener("click", function (event) {
   event.preventDefault();
   editLi.childNodes[0].textContent = change.value;
+  console.log(editLi.childNodes[0]);
   form2.style.display = "none";
 });
 
