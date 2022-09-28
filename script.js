@@ -85,6 +85,7 @@ form.addEventListener("click", function (event) {
   editLi.childNodes[0].textContent = change.value;
   console.log(editLi.childNodes[0]);
   form2.style.display = "none";
+  localStorage.setItem("list", list.innerHTML);
 });
 
 // <html>
